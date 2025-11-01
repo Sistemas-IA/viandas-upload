@@ -12,14 +12,14 @@ export default async function handler(req) {
     });
 
   try {
-    const token = process.env.BLOB_READ_WRITE_TOKEN; // ← env var del proyecto
+    const token = process.env.BLOB_READ_WRITE_TOKEN;         // ← viene de Vercel Settings
     if (!token) throw new Error('Falta BLOB_READ_WRITE_TOKEN');
 
     const r = await fetch('https://api.vercel.com/v2/blob/generate-upload-url', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `Bearer ${token}`,          // ← IMPORTANTE
+        'authorization': `Bearer ${token}`,                  // ← IMPORTANTE
       },
       body: JSON.stringify({}),
     });
