@@ -1,1 +1,9 @@
+{
+  "name": "viandas-upload",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/blob": "latest"
+  }
+}
 
